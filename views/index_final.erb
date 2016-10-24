@@ -1,0 +1,57 @@
+<!-- .erb means embedded ruby within html  -->
+<html lang="en">
+	<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="description" content="">
+	    <meta name="author" content="Richard Sarao">
+	    <title>One Month Rails Final</title>
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css"> 
+		<link href="css/bootstrap.css" rel="stylesheet">
+    	<link href="css/main.css" rel="stylesheet">
+	</head>
+	<body>
+		<style> 
+			section.movie {height: 60px; background: #DDD; font-size: 1.5rem;text-align: center; vertical-align: middle; line-height: 60px; color: black; border-radius: 15px 15px 0 0;}
+			div {text-align: center}
+		    h3 {text-align: center}
+		    h1 {text-align: center; font-size: 2rem}
+		 </style>
+		
+		<h1>Welcome to Movies Movies Movies!!</h1>
+		<div class="container">
+			
+			<h2>Enter the name of a movie you'd like to know more about and click submit.</h2>
+			
+			<form action="/" method="POST" class="form-inline">  <!-- form w/submit button  -->
+				<div class="form-group">
+					<input type="text" name="from_form" class="form-control">
+				</div>
+				<input type="submit" class="btn btn-primary">	
+			</form> <!-- form w/submit button ^^^ -->
+		</div>
+		
+		<section class="movie">
+					<u><a href=<%= @movie_url %> target="_blank"> <%= @title %> </a></u>
+         </section>
+         
+         <h3>Directed by: <%= @director %> <br />
+         Released in: <%= @year %> <br />
+         Staring:</h3>
+
+         <section class="movie">
+					<u><a href=<%= @cast1url %> target="_blank"> <%= @cast1 %> </a> </u> and 
+					<u><a href=<%= @cast2url %> target="_blank"> <%= @cast2 %> </a> </u>
+         </section>
+         
+         <h3>It runs for <%= @runtime %> and its genres are: <%= @genres %></h3>
+
+		<h3>Other movies in this series are:</h3>
+         <section class="movie">
+					<u><a href=<%= @movie_url1 %> target="_blank"> <%= @title1 %> </a></u> and 
+					<u><a href=<%= @movie_url2 %> target="_blank"> <%= @title2 %> </a></u>
+         </section>
+	</body>
+</html>
